@@ -2,14 +2,14 @@
 <head>
 	<title>Input/Ouput data</title></head>
 <body>
-<form action="" name="myform" method="post">
-	Your Name: <input type="test" name="Name" size=20 value="<?php if(isset($_POST['Name'])) echo $_POST['Name'];?>" />
+<form>
+	Your Name: <input type="test" name="Name" size=20 value="<?php if(isset($_GET['Name'])) echo $_GET['Name'];?>" />
 	<br>
 	<input type="submit" value="Submit">
 </form>
 <?php
-	if (isset($_POST["Name"]))
-		print "Hello " . $_POST["Name"];
+	if (isset($_GET["Name"]))
+		print "Hello " . $_GET["Name"];
 ?>
 </body>
 </html>

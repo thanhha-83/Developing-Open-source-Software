@@ -1,0 +1,15 @@
+form legend {
+    font-weight: bold;
+}
+
+form fieldset {
+    width: 600px;
+}
+
+form input[type="text"] {
+    width: 100%;
+}
+
+form table #btn {
+    text-align: center;
+}

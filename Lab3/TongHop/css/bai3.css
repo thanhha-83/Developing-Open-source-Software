@@ -1,0 +1,54 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#content {
+    width: 400px;
+    background-color: cyan;
+    margin: 50px auto;
+    padding: 10px;
+}
+
+#title {
+    background-color: wheat;
+    height: 30px;
+    padding: 10px;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    color: purple;
+}
+
+#form {
+    background-color: white;
+    padding: 10px;
+}
+
+#form form table {
+    width: 90%;
+    text-align: left;
+    margin: 0 auto;
+}
+
+#form form table tr, td{
+    padding: 3px;
+}
+
+#form form table #pheptinh {
+    color: red;
+}
+
+#form form table tr .number {
+    color: blue;
+}
+
+#form form table tr td:first-child {
+    text-align: right;
+}
+
+#error {
+    text-align: center;
+    color:red;
+    font-weight: bold;
+}
