@@ -23,9 +23,6 @@
 
 <body>
 	<?php
-
-	use HinhTron as GlobalHinhTron;
-
 	abstract class Hinh
 	{
 		protected $ten, $dodai;
@@ -157,7 +154,6 @@
 						}
 						break;
 					case 'htgt':
-						// (a + b > c) && (a + c > b) && (b + c > a)
 						if (count($arr) == 3) {
 							if (($arr[0] + $arr[1] > $arr[2]) && ($arr[0] + $arr[2] > $arr[1]) && ($arr[1] + $arr[2] > $arr[0])) {
 								$htgt = new HinhTamGiacThuong();
@@ -213,7 +209,7 @@
 				</tr>
 				<tr>
 					<td>Nhập độ dài:</td>
-					<td><input type="text" name="dodai" value="<?php if (isset($_POST['dodai'])) echo $_POST['dodai']; ?>" pattern="[0-9,.]*" /></td>
+					<td><input type="text" name="dodai" value="<?php if (isset($_POST['dodai'])) echo $_POST['dodai']; ?>" pattern="[0-9,.]*" required/></td>
 				</tr>
 				<tr>
 					<td>Kết quả:</td>
