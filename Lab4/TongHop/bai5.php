@@ -11,6 +11,7 @@
 
 <body>
     <?php
+    session_start();
     $maMH = "";
     $tenMH = "";
     $dvt = "";
@@ -23,6 +24,9 @@
         ["maMH" => "B002", "tenMH" => "Đường cát", "dvt" => "Kg", "sl" => 15],
         ["maMH" => "C001", "tenMH" => "Chén sứ Minh Long", "dvt" => "Bộ 10 cái", "sl" => 2],
     ];
+    if(!isset($_SESSION['listMH'])) {
+        $_SESSION['listMH'] = $listMH;
+    }
     if (($_SERVER['REQUEST_METHOD'] == 'POST')) {
         $maMH = trim($_POST['maMH']);
         $tenMH = trim($_POST['tenMH']);
@@ -30,14 +34,14 @@
         $sl = $_POST['sl'];
         if ($_POST['maMH'] != "" && $_POST['tenMH'] != "" && $_POST['dvt'] != "" && $_POST['sl'] != "") {
             $flag = true;
-            foreach($listMH as $mh) {
+            foreach($_SESSION['listMH'] as $mh) {
                 if($maMH == $mh['maMH']) {
                     $flag = false;
                     break;
                 }
             }
             if($flag == true) {
-                array_push($listMH, [
+                array_push($_SESSION['listMH'], [
                     "maMH" => $maMH,
                     "tenMH" => $tenMH,
                     "dvt" => $dvt,
@@ -105,7 +109,7 @@
                     <th>Số lượng</th>
                 </tr>
                 <?php
-                    foreach($listMH as $mh) {
+                    foreach($_SESSION['listMH'] as $mh) {
                         echo '<tr>
                             <td>'.$mh['maMH'].'</td>
                             <td>'.$mh['tenMH'].'</td>
